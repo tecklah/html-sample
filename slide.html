@@ -1,0 +1,173 @@
+<html class="main">
+<head>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+#column1 {
+	width: 20%;
+	height: 100%;
+	display: block;
+	flex: initial;
+}
+
+#column2 {
+	width: 60%;
+	height: 100%;
+	border: 1px solid black;
+	display: block;
+	flex: initial;
+}
+
+#column3 {
+	width: 20%;
+	height: 100%;
+	display: block;
+	flex: initial;
+}
+
+.slidecontainer {
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	flex: initial;
+}
+
+.slide1 {
+	position: absolute;
+	left: -1000px;
+	background-color: bisque;
+	width: 100%;
+	height: 100%;
+	transition: 1s;
+	overflow: hidden;
+}
+
+.slide2 {
+	position: absolute;
+	left: -1000px;
+	background-color: darkseagreen;
+	width: 100%;
+	height: 100%;
+	transition: 1s;
+	overflow: hidden;
+}
+
+.slide3 {
+	position: absolute;
+	left: -1000px;
+	background-color: salmon;
+	width: 100%;
+	height: 100%;
+	transition: 1s;
+	overflow: hidden;
+}
+
+.open {
+	transition: 1s;
+	left: 0;
+}
+
+.contentcontainer {
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="column1">
+		<div>
+			<div class="contentcontainer">
+				<a href="#" id="page1">Page1</a> 
+                <a href="#" id="page2">Page2</a> 
+                <a href="#" id="page3">Page3</a>
+			</div>
+		</div>
+	</div>
+	<div id="column2">
+		<div class="slidecontainer">
+			<div class="slide1" id="slide1">
+				<div class="contentcontainer">Lorem Ipsum is simply dummy text
+					of the printing and typesetting industry. Lorem Ipsum has been the
+					industry's standard dummy text ever since the 1500s, when an
+					unknown printer took a galley of type and scrambled it to make a
+					type specimen book. It has survived not only five centuries, but
+					alsoe the leap into electronic typesetting, remaining essentially
+					unchanged. It was popularised in the 1960s with the release of
+					Letraset sheets containing Lorem Ipsum passages, and more recently
+					with desktop publishing software like Aldus PageMaker including
+					versions of Lorem Ipsum.</div>
+			</div>
+			<div class="slide2" id="slide2">
+				<div class="contentcontainer">It is a long established fact
+					that a reader will be distracted by the readable content of a page
+					when looking at its layout. The point of using Lorem Ipsum is that
+					it has a more-or-less normal distribution of letters, as opposed to
+					using 'Content here, content here', making it look like readable
+					English. Many desktop publishing packages and web page editors now
+					use Lorem Ipsum as their default model text, and a search for
+					'lorem ipsum' will uncover many web sites still in their infancy.
+					Various versions have evolved over the years, sometimes by
+					accident, sometimes on purpose (injected humour and the like).</div>
+			</div>
+			<div class="slide3" id="slide3">
+				<div class="contentcontainer">It is a long established fact
+					that a reader will be distracted by the readable content of a page
+					when looking at its layout. The point of using Lorem Ipsum is that
+					it has a more-or-less normal distribution of letters, as opposed to
+					using 'Content here, content here', making it look like readable
+					English. Many desktop publishing packages and web page editors now
+					use Lorem Ipsum as their default model text, and a search for
+					'lorem ipsum' will uncover many web sites still in their infancy.
+					Various versions have evolved over the years, sometimes by
+					accident, sometimes on purpose (injected humour and the like).</div>
+			</div>
+		</div>
+	</div>
+	<div id="column3">
+		<div>
+			<div class="contentcontainer">test2</div>
+		</div>
+	</div>
+	<script>
+		document.getElementById("page1").addEventListener("click", page1Slide);
+		document.getElementById("page2").addEventListener("click", page2Slide);
+		document.getElementById("page3").addEventListener("click", page3Slide);
+		
+		function page1Slide() {
+		    element1 = document.getElementById("slide1");
+		    element1.classList.add("open");
+		    element2 = document.getElementById("slide2");
+		    element2.classList.remove("open");
+		    element3 = document.getElementById("slide3");
+		    element3.classList.remove("open");
+		}
+		
+		function page2Slide() {
+		    element1 = document.getElementById("slide1");
+		    element1.classList.remove("open");
+		    element2 = document.getElementById("slide2");
+		    element2.classList.add("open");
+		    element3 = document.getElementById("slide3");
+		    element3.classList.remove("open");
+		} 
+		
+		function page3Slide() {
+		    element1 = document.getElementById("slide1");
+		    element1.classList.remove("open");
+		    element2 = document.getElementById("slide2");
+		    element2.classList.remove("open");
+		    element3 = document.getElementById("slide3");
+		    element3.classList.add("open");
+		}
+	</script>
+</body>
+</html>
